@@ -8,12 +8,15 @@ import {
     UserIcon,
     DotsCircleHorizontalIcon
 } from '@heroicons/react/outline';
+import Image from 'next/image';
 
 
 export default function Sidebar() {
     return (
-        <div className=" sm:flex flex-col fixed"> {/*add hidden later in the beginning of function */}
-            <div>Logo</div>
+        <div className=" sm:flex flex-col fixed font-Zelda"> {/*add hidden later in the beginning of function */}
+            <div>
+                <Image src={'/assets/cucco2.png'} width={34} height={34} />
+            </div>
             <nav>
                 <SidebarLink Icon={HomeIcon} text={"Home"} />
                 <SidebarLink Icon={HashtagIcon} text={"Explore"} />
@@ -23,7 +26,7 @@ export default function Sidebar() {
                 <SidebarLink Icon={UserIcon} text={"Profile"} />
                 <SidebarLink Icon={DotsCircleHorizontalIcon} text={"More"} />
             </nav>
-            <div>User</div>
+            <div className="font-Zelda">User</div>
         </div>
     )
 }
