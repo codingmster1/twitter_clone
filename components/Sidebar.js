@@ -3,7 +3,7 @@ import { HomeIcon } from '@heroicons/react/outline';
 
 export default function Sidebar() {
     return (
-        <div className="hidden sm:flex flex-col">
+        <div className=" sm:flex flex-col fixed"> {/*add hidden later in the beginning of function */}
             <div>Logo</div>
             <nav>
                 <SidebarLink Icon={HomeIcon} text={"Home"} />
