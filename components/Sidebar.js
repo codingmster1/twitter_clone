@@ -1,5 +1,15 @@
 export default function Sidebar() {
-    return <>
-        <h1>Sidebar</h1>
-    </>
+    return (
+        <div>
+            <div>Logo</div>
+            <nav>
+                <li>Home</li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </nav>
+            <div>User</div>
+        </div>
+    )
 }
