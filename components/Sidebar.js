@@ -14,7 +14,7 @@ import Image from 'next/image';
 export default function Sidebar() {
     return (
         <div className=" sm:flex flex-col fixed font-Zelda"> {/*add hidden later in the beginning of function */}
-            <div>
+            <div className="py-3">
                 <Image src={'/assets/cucco2.png'} width={34} height={34} />
             </div>
             <nav>
@@ -26,7 +26,7 @@ export default function Sidebar() {
                 <SidebarLink Icon={UserIcon} text={"Profile"} />
                 <SidebarLink Icon={DotsCircleHorizontalIcon} text={"More"} />
             </nav>
-            <div className="font-Zelda">User</div>
+            <div>User</div>
         </div>
     )
 }
