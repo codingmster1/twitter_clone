@@ -10,3 +10,7 @@
     font-weight: 400;
 
 }
+
+.hoverAnimation {
+    @apply hover:bg-black hover:bg-opacity-10 xl:p-3;
+}
