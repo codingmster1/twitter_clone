@@ -1,15 +1,22 @@
 export default function Sidebar() {
     return (
-        <div>
+        <div className="hidden sm:flex flex-col">
             <div>Logo</div>
             <nav>
-                <li>Home</li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
+                <SidebarLink text={"Home"} />
+                <SidebarLink text={"Explore"} />
+                <SidebarLink text={"Notifications"} />
+                <SidebarLink text={"Messages"} />
             </nav>
             <div>User</div>
         </div>
+    )
+}
+
+function SidebarLink({ text, icon }) {
+    return (
+        <li>
+            {text}
+        </li>
     )
 }
