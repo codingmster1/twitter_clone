@@ -21,7 +21,7 @@ export function TweetHeader() {
                 className="w-11 h-11 rounded-full object-cover" />
             <div>
 
-                <div className="flex items-center space-x-2 font-Quest text-gray-500">
+                <div className="flex items-center space-x-2 font-Quest text-gray-500 mb-1">
                     <span>@link</span>
                     <div className="w-1 h-1 bg-green-700 rounded-full"></div>
                     <span>1 hour ago</span>
