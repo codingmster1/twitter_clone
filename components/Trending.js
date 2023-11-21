@@ -1,6 +1,6 @@
 export default function Trending() {
     return (
-        <div>
+        <div className="hidden lg:flex">
             Trending
         </div>
     )
