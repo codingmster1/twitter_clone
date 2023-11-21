@@ -1,6 +1,6 @@
 export default function Trending() {
     return (
-        <div className="hidden lg:flex">
+        <div className="hidden lg:flex font-Quest">
             Trending
         </div>
     )

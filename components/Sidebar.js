@@ -27,7 +27,7 @@ export default function Sidebar() {
                 <SidebarLink Icon={DotsCircleHorizontalIcon} text={"More"} />
                 <button className="hidden xl:inline bg-[#fa5044]
                 rounded-full h-[52px] mt-2 w-[200px] text-lg" >Write</button>
-                <div className="absolute bottom-0">User</div>
+                <div className="absolute bottom-0 font-Quest">User</div>
             </nav>
 
         </div>
