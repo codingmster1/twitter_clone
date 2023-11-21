@@ -11,7 +11,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        Zelda: ['Zelda']
+        Zelda: ['Zelda'],
+        Quest: ['Quest']
       }
     },
   },
