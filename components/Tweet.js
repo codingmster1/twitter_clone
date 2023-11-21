@@ -26,7 +26,7 @@ export function TweetHeader() {
                     <div className="w-1 h-1 bg-green-700 rounded-full"></div>
                     <span>1 hour ago</span>
                 </div>
-                <span>text</span>
+                <span className="font-Quest">text</span>
 
             </div>
         </div>
