@@ -7,8 +7,8 @@ export default function Tweet() {
             <div className="p-5 ml-16 text-[#fa5044] flex space-x-14">
                 <ChatIcon className="w-5 cursor-pointer hover:text-red-400" />
                 <HeartIcon className="w-5 cursor-pointer hover:text-red-400" />
-                <ChartBarIcon className="w-5 cursor-pointer hover:text-red-400" />
-                <UploadIcon className="w-5 cursor-pointer hover:text-red-400" />
+                <ChartBarIcon className="w-5 cursor-not-allowed" />
+                <UploadIcon className="w-5 cursor-not-allowed" />
             </div>
         </div>
     )
