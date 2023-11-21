@@ -1,14 +1,22 @@
+import { ChartBarIcon, ChatIcon, HeartIcon, UploadIcon } from "@heroicons/react/outline"
+
 export default function Tweet() {
     return (
-        <div>
+        <div className="border-b border-green-700">
             <TweetHeader />
+            <div className="p-5 ml-16 text-[#fa5044] flex space-x-14">
+                <ChatIcon className="w-5 cursor-pointer hover:text-red-400" />
+                <HeartIcon className="w-5 cursor-pointer hover:text-red-400" />
+                <ChartBarIcon className="w-5 cursor-pointer hover:text-red-400" />
+                <UploadIcon className="w-5 cursor-pointer hover:text-red-400" />
+            </div>
         </div>
     )
 }
 
 export function TweetHeader() {
     return (
-        <div className="flex space-x-3 p-3 border-b border-green-700">
+        <div className="flex space-x-3 p-3 border-green-700">
             <img src="/assets/linkpp.png"
                 className="w-11 h-11 rounded-full object-cover" />
             <div>
