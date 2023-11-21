@@ -21,3 +21,7 @@
 .hoverAnimation {
     @apply hover:cursor-pointer hover:bg-black hover:bg-opacity-10 rounded-full xl:p-3 w-11 h-11 xl:w-auto xl:h-auto;
 }
+
+.iconAnimation {
+    @apply hover:bg-opacity-10 hover:bg-[#5c0802] cursor-pointer rounded-full w-9 h-9 flex items-center justify-center
+}

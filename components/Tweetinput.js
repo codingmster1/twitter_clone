@@ -1,3 +1,5 @@
+import { CalendarIcon, ChartBarIcon, EmojiHappyIcon, LocationMarkerIcon, PhotographIcon } from "@heroicons/react/outline";
+
 export default function TweetInput() {
     return (
         <div className="flex space-x-3 p-3 border-b border-green-700">
@@ -13,7 +15,22 @@ export default function TweetInput() {
 
 
                 <div className="flex justify-between border-t border-green-700 pt-4">
-                    <div>
+                    <div className="flex space-x-0 ">
+                        <div className="iconAnimation">
+                            <PhotographIcon className="h-[22px] text-[#fa5044]" />
+                        </div>
+                        <div className="iconAnimation">
+                            <ChartBarIcon className="h-[22px] text-[#fa5044]" />
+                        </div>
+                        <div className="iconAnimation">
+                            <EmojiHappyIcon className="h-[22px] text-[#fa5044]" />
+                        </div>
+                        <div className="iconAnimation">
+                            <CalendarIcon className="h-[22px] text-[#fa5044]" />
+                        </div>
+                        <div className="iconAnimation">
+                            <LocationMarkerIcon className="h-[22px] text-[#fa5044]" />
+                        </div>
 
                     </div>
 
