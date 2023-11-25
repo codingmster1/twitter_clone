@@ -25,8 +25,8 @@ export default function Sidebar() {
                 <SidebarLink Icon={BookmarkIcon} text={"Bookmarks"} />
                 <SidebarLink Icon={UserIcon} text={"Profile"} />
                 <SidebarLink Icon={DotsCircleHorizontalIcon} text={"More"} />
-                <button className="hidden xl:inline bg-blue-500
-                rounded-full h-[52px] mt-2 w-[200px] text-lg font-Quest" >Write</button>
+                <button className="hidden xl:inline bg-blue-400
+                rounded-full h-[52px] mt-2 w-[200px] text-lg font-Quest font-bold" >Write</button>
                 <div className="absolute bottom-0 font-Quest">User</div>
             </nav>
 

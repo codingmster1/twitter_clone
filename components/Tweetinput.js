@@ -34,7 +34,7 @@ export default function TweetInput() {
 
                     </div>
 
-                    <button className="font-Quest bg-blue-500 rounded-full px-4 py-1.5">
+                    <button className="font-Quest bg-blue-400 font-bold rounded-full px-4 py-1.5">
                         Post
                     </button>
                 </div>

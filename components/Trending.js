@@ -3,11 +3,11 @@ import { BadgeCheckIcon } from "@heroicons/react/solid";
 
 export default function Trending() {
     return (
-        <div className="hidden lg:flex flex-col ml-5 mt-4 font-Quest">
+        <div className="hidden lg:flex flex-col ml-5 mt-4 overflow-hidden font-Quest">
             <h1 className="mb-3">Trending</h1>
 
             <div className="flex space-x-3 bg-white
-            w-[300px] h-[44px] p-3 rounded-3xl">
+            w-[300px] h-[44px] p-3 mr-3 rounded-3xl">
                 <SearchIcon className="w-6" />
                 <input
                     className="bg-transparent
@@ -17,7 +17,7 @@ export default function Trending() {
 
                 />
             </div>
-            <div className="w-[300px] h-[500px] bg-white rounded-3xl mt-3">
+            <div className="w-[300px] h-[500px] bg-white rounded-3xl mr-3 mt-3">
                 <h1 className="font-Quest text-xl p-3">Whats been up</h1>
                 <div className="p-3 relative">
                     <DotsCircleHorizontalIcon className="w-5 absolute right-4" />
