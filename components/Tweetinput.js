@@ -2,7 +2,7 @@ import { CalendarIcon, ChartBarIcon, EmojiHappyIcon, LocationMarkerIcon, Photogr
 
 export default function TweetInput() {
     return (
-        <div className="flex space-x-3 p-3 border-b border-green-700">
+        <div className="flex space-x-3 p-3 border-b border-blue-500">
             <img
                 className="w-11 h-11 rounded-full object-cover"
                 src="/assets/linkpp.png" />
@@ -14,7 +14,7 @@ export default function TweetInput() {
 
 
 
-                <div className="flex justify-between border-t border-green-700 pt-4">
+                <div className="flex justify-between border-t border-blue-500 pt-4">
                     <div className="flex space-x-0 ">
                         <div className="iconAnimation">
                             <PhotographIcon className="h-[22px] text-[#fa5044]" />
@@ -34,8 +34,8 @@ export default function TweetInput() {
 
                     </div>
 
-                    <button className="font-Quest bg-[#fa5044] rounded-full px-4 py-1.5">
-                        Write
+                    <button className="font-Quest bg-blue-500 rounded-full px-4 py-1.5">
+                        Post
                     </button>
                 </div>
             </div>

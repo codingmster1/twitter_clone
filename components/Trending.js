@@ -3,8 +3,8 @@ import { BadgeCheckIcon } from "@heroicons/react/solid";
 
 export default function Trending() {
     return (
-        <div className="lg:flex font-Quest">
-            Trending
+        <div className="hidden lg:flex flex-col ml-5 mt-4 font-Quest">
+            <h1 className="mb-3">Trending</h1>
 
             <div className="flex space-x-3 bg-white
             w-[300px] h-[44px] p-3 rounded-3xl">

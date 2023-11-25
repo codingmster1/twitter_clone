@@ -10,8 +10,8 @@ export default function Home() {
   return (
     <div className="bg-[#d4fdf6] min-h-screen text-[#000000]
     max-w-[1400px] mx-auto flex font-Zelda">
-      { /*<Sidebar />*/}
-      {/*<PostFeed />*/}
+      <Sidebar />
+      <PostFeed />
       <Trending />
     </div>
   );
