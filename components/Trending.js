@@ -56,7 +56,7 @@ export default function Trending() {
 
             </div>
 
-            <div className="w-[300px] h-[300px] bg-white rounded-3xl mt-3">
+            <div className="w-[300px] h-[300px] bg-white rounded-3xl mb-3 mt-3">
                 <h1 className="font-Quest text-xl p-3">Who to follow</h1>
 
                 <div className="flex justify-between p-3">
