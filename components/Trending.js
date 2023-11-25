@@ -59,16 +59,62 @@ export default function Trending() {
             <div className="w-[300px] h-[300px] bg-white rounded-3xl mt-3">
                 <h1 className="font-Quest text-xl p-3">Who to follow</h1>
 
-                <div>
-                    <div className="flex space-x-3 p-3">
+                <div className="flex justify-between p-3">
+                    <div className="flex space-x-3">
                         <img className="w-11 h-11 object-cover rounded-full" src="/assets/beedle.jpg" />
                         <div>
-                            <h1 className="font-bold">Beedle</h1>
-                            <BadgeCheckIcon className="w-[18px] text-blue-400" />
+                            <div className="flex space-x-1">
+                                <h1 className="font-bold">Beedle</h1>
+                                <BadgeCheckIcon className="w-[18px] text-blue-400" />
+                            </div>
+                            <h1 className="text-[12px] mt-1 text-gray-500">@beedle</h1>
+
                         </div>
 
+
                     </div>
-                    <button>
+                    <button className="bg-blue-300 text-black text-sm w-20 h-8
+                    rounded-3xl font-bold">
+                        Follow
+                    </button>
+                </div>
+
+                <div className="flex justify-between p-3">
+                    <div className="flex space-x-3">
+                        <img className="w-11 h-11 object-cover rounded-full" src="/assets/beedle.jpg" />
+                        <div>
+                            <div className="flex space-x-1">
+                                <h1 className="font-bold">Beedle</h1>
+                                <BadgeCheckIcon className="w-[18px] text-blue-400" />
+                            </div>
+                            <h1 className="text-[12px] mt-1 text-gray-500">@beedle</h1>
+
+                        </div>
+
+
+                    </div>
+                    <button className="bg-blue-300 text-black text-sm w-20 h-8
+                    rounded-3xl font-bold">
+                        Follow
+                    </button>
+                </div>
+
+                <div className="flex justify-between p-3">
+                    <div className="flex space-x-3">
+                        <img className="w-11 h-11 object-cover rounded-full" src="/assets/beedle.jpg" />
+                        <div>
+                            <div className="flex space-x-1">
+                                <h1 className="font-bold">Beedle</h1>
+                                <BadgeCheckIcon className="w-[18px] text-blue-400" />
+                            </div>
+                            <h1 className="text-[12px] mt-1 text-gray-500">@beedle</h1>
+
+                        </div>
+
+
+                    </div>
+                    <button className="bg-blue-300 text-black text-sm w-20 h-8
+                    rounded-3xl font-bold">
                         Follow
                     </button>
                 </div>
