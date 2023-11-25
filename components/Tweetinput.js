@@ -2,7 +2,7 @@ import { CalendarIcon, ChartBarIcon, EmojiHappyIcon, LocationMarkerIcon, Photogr
 
 export default function TweetInput() {
     return (
-        <div className="flex space-x-3 p-3 border-b border-blue-500">
+        <div className=" flex space-x-3 p-3 border-b border-blue-500">
             <img
                 className="w-11 h-11 rounded-full object-cover"
                 src="/assets/linkpp.png" />

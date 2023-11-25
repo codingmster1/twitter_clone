@@ -7,7 +7,7 @@ export default function Trending() {
             <h1 className="mb-3">Trending</h1>
 
             <div className="flex space-x-3 bg-white
-            w-[300px] h-[44px] p-3 mr-3 rounded-3xl">
+            w-[300px] h-[44px] p-3 rounded-3xl">
                 <SearchIcon className="w-6" />
                 <input
                     className="bg-transparent
