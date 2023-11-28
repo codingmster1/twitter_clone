@@ -4,11 +4,6 @@ import { useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 
 export default function SignupModal() {
-
-    //const [isOpen, setIsOpen] = useState(false)
-    //const handleClose = () => setIsOpen(false)
-    //const handleOpen = () => setIsOpen(true)
-
     const isOpen = useSelector(state => state.modals.signupModalOpen)
     const dispatch = useDispatch()
     console.log(isOpen)
