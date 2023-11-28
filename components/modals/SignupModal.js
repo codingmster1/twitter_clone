@@ -3,9 +3,12 @@ import { useState } from "react";
 
 export default function SignupModal() {
 
-    const [isOpen, setIsOpen] = useState(false)
-    const handleClose = () => setIsOpen(false)
-    const handleOpen = () => setIsOpen(true)
+    //const [isOpen, setIsOpen] = useState(false)
+    //const handleClose = () => setIsOpen(false)
+    //const handleOpen = () => setIsOpen(true)
+
+    const isOpen = useSelector(state => state.modals.signupModalOpen)
+
     return (
         <>
             <button className="bg-white text-black font-Quest
