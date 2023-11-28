@@ -1,6 +1,5 @@
 import { closeSignupModal, openSignupModal } from '@/redux/modalSlice';
 import Modal from '@mui/material/Modal';
-import { useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 
 export default function SignupModal() {
@@ -21,8 +20,16 @@ export default function SignupModal() {
                 onClose={() => dispatch(closeSignupModal())}
                 className="flex justify-center items-center">
 
-                <div className="w-[400px] h-[200px] bg-white">
-                    Sign Up
+                <div className="w-[90%] h-[400px] bg-white font-Quest md:w-[560px]
+                md:h-[600px] border border-blue-500 rounded-lg">
+
+
+                    <div className="w-[90%]" >
+                        <button className="bg-black text-white w-full font-Quest font-bold
+                    text-lg p-2">
+                            Sign in as Guest
+                        </button>
+                    </div>
                 </div>
 
             </Modal>
