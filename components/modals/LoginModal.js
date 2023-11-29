@@ -41,9 +41,9 @@ export default function LoginModal() {
                     text-lg p-2 mt-8 rounded-md">
                             Login
                         </button>
-                        <h1 className="text-center mt-4 font-bold font-Quest text-lg">or</h1>
+                        <h1 className="text-center mt-8 font-bold font-Quest text-lg">or</h1>
                         <button className="bg-black text-white w-full font-Quest font-bold
-                    text-lg p-2 rounded-md mt-4">
+                    text-lg p-2 rounded-md mt-8">
                             Sign in as Guest
                         </button>
 
