@@ -27,7 +27,7 @@ export default function SignupModal() {
 
                     <div className="w-[90%] mt-8 flex flex-col" >
                         <button className="bg-black text-white w-full font-Quest font-bold
-                    text-lg p-2">
+                    text-lg p-2 rounded-md">
                             Sign in as Guest
                         </button>
                         <h1 className="text-center mt-4 font-bold font-Quest text-lg">or</h1>
@@ -43,6 +43,11 @@ export default function SignupModal() {
                             placeholder="Password"
                             className="h-10 mt-8 rounded-md bg-transparent border border-black p-6"
                             type={"password"} />
+
+                        <button className="bg-black text-white w-full font-Quest font-bold
+                    text-lg p-2 mt-8 rounded-md">
+                            Create Account
+                        </button>
                     </div>
                 </div>
 
