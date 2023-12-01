@@ -1,3 +1,5 @@
+import { auth } from '@/firebase';
+import { signOutUser } from '@/redux/userSlice';
 import {
     HomeIcon,
     HashtagIcon,
@@ -9,10 +11,24 @@ import {
     DotsCircleHorizontalIcon,
     DotsHorizontalIcon
 } from '@heroicons/react/outline';
+import { signOut } from 'firebase/auth';
 import Image from 'next/image';
+import { useDispatch, useSelector } from 'react-redux';
 
 
 export default function Sidebar() {
+
+    const dispatch = useDispatch()
+
+    const user = useSelector(state => state.user)
+
+    async function handleSignOut() {
+        await signOut(auth)
+        dispatch(signOutUser())
+
+    }
+
+
     return (
         <div className="h-full hidden sm:flex flex-col fixed xl:ml-24 font-Zelda"> {/*add hidden later in the beginning of function */}
             <nav className="h-full relative xl:space-y-1.5">
@@ -30,17 +46,19 @@ export default function Sidebar() {
                 rounded-full h-[52px] mt-2 w-[200px] text-lg font-Quest font-bold" >Write</button>
 
 
-                <div className="
+                <div
+                    onClick={handleSignOut}
+                    className="
                 bottom-0
                 hover:bg-white rounded-full cursor-pointer
                 absolute flex font-Quest justify-center items-center 
                 xl:p-3 space-x-3">
 
-                    <img className="w-10 h-10 rounded-full object-cover  
-                     " src="/assets/linkpp.png" />
+                    <img className="w-10 h-10 rounded-full object-cover"
+                        src={user.photoUrl || "/assets/linkpp.png"} />
                     <div className="hidden xl:inline">
-                        <h1 className="font-bold whitespace-nowrap">name</h1>
-                        <h1 className="text-gray-500">@username</h1>
+                        <h1 className="font-bold whitespace-nowrap">{user.name}</h1>
+                        <h1 className="text-gray-500">@{user.username}</h1>
                     </div>
                     <DotsHorizontalIcon className="h-5 hidden xl:inline" />
                 </div>

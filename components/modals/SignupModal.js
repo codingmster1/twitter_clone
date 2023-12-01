@@ -1,7 +1,7 @@
 import { closeSignupModal, openSignupModal } from '@/redux/modalSlice';
 import Modal from '@mui/material/Modal';
 import { useDispatch, useSelector } from 'react-redux';
-import { createUserWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth';
+import { createUserWithEmailAndPassword, onAuthStateChanged, updateProfile } from 'firebase/auth';
 import { useEffect, useState } from 'react';
 import { auth } from '@/firebase';
 import { setUser } from '@/redux/userSlice';
@@ -11,6 +11,7 @@ export default function SignupModal() {
     const dispatch = useDispatch()
 
     const [email, setEmail] = useState("")
+    const [name, setName] = useState("")
     const [password, setPassword] = useState("")
 
     async function handleSignUp() {
@@ -20,6 +21,11 @@ export default function SignupModal() {
             email,
             password
         )
+
+        await updateProfile(auth.currentUser, {
+            displayName: name
+
+        })
     }
 
     useEffect(() => {
@@ -29,7 +35,7 @@ export default function SignupModal() {
             dispatch(setUser(
                 {
                     username: currentUser.email.split("@")[0],
-                    name: null,
+                    name: name,
                     email: currentUser.email,
                     uid: currentUser.uid,
                     photoUrl: null
@@ -68,7 +74,8 @@ export default function SignupModal() {
                         <h1 className="text-center mt-4 font-bold font-Quest text-2xl">Create your Account</h1>
                         <input placeholder="Full Name"
                             className="h-10 mt-8 rounded-md bg-transparent border border-black p-6"
-                            type={"text"} />
+                            type={"text"}
+                            onChange={e => setName(e.target.value)} />
                         <input
                             placeholder="Email"
                             className="h-10 mt-8 rounded-md bg-transparent border border-black p-6"
