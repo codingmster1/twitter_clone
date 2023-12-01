@@ -11,6 +11,7 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
 
   const username = useSelector(state => state.user.username)
+  console.log(username)
   return (
     <div>
       <div className="bg-[#d4fdf6] min-h-screen text-[#000000]
@@ -20,7 +21,7 @@ export default function Home() {
         <Trending />
       </div>
 
-      <BottomBanner />
+      {!username && <BottomBanner />}
 
     </div>
 

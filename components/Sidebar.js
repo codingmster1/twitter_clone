@@ -6,7 +6,8 @@ import {
     ClipboardListIcon,
     BellIcon,
     UserIcon,
-    DotsCircleHorizontalIcon
+    DotsCircleHorizontalIcon,
+    DotsHorizontalIcon
 } from '@heroicons/react/outline';
 import Image from 'next/image';
 
@@ -27,7 +28,23 @@ export default function Sidebar() {
                 <SidebarLink Icon={DotsCircleHorizontalIcon} text={"More"} />
                 <button className="hidden xl:inline bg-blue-400
                 rounded-full h-[52px] mt-2 w-[200px] text-lg font-Quest font-bold" >Write</button>
-                <div className="absolute bottom-0 font-Quest">User</div>
+
+
+                <div className="
+                bottom-0
+                hover:bg-white rounded-full cursor-pointer
+                absolute flex font-Quest justify-center items-center 
+                xl:p-3 space-x-3">
+
+                    <img className="w-10 h-10 rounded-full object-cover  
+                     " src="/assets/linkpp.png" />
+                    <div className="hidden xl:inline">
+                        <h1 className="font-bold whitespace-nowrap">name</h1>
+                        <h1 className="text-gray-500">@username</h1>
+                    </div>
+                    <DotsHorizontalIcon className="h-5 hidden xl:inline" />
+                </div>
+
             </nav>
 
         </div>
