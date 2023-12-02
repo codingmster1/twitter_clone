@@ -23,7 +23,8 @@ export default function SignupModal() {
         )
 
         await updateProfile(auth.currentUser, {
-            displayName: name
+            displayName: name,
+            photoUrl: `./assets/profilePictures`
 
         })
     }
