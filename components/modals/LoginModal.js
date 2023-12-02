@@ -16,6 +16,10 @@ export default function LoginModal() {
         await signInWithEmailAndPassword(auth, email, password)
     }
 
+    async function handleGuestSignIn(email, password) {
+        await signInWithEmailAndPassword(auth, "guest111100@gmail.com", "123456")
+    }
+
 
 
 
@@ -60,7 +64,9 @@ export default function LoginModal() {
                         </button>
                         <h1 className="text-center mt-8 font-bold font-Quest text-lg">or</h1>
                         <button className="bg-black text-white w-full font-Quest font-bold
-                    text-lg p-2 rounded-md mt-8">
+                    text-lg p-2 rounded-md mt-8"
+                            onClick={handleGuestSignIn}
+                        >
                             Sign in as Guest
                         </button>
 
