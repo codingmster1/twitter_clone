@@ -4,7 +4,8 @@ export default function Tweet({ data }) {
     return (
         <div className="border-b border-blue-500">
             <TweetHeader username={data?.username} name={data?.name} //timestamp={data?.timestamp} 
-                text={data?.tweet} />
+                text={data?.tweet}
+                photoUrl={data?.photoUrl} />
             <div className="p-5 ml-16 text-[#fa5044] flex space-x-14">
                 <ChatIcon className="w-5 cursor-pointer hover:text-red-400" />
                 <HeartIcon className="w-5 cursor-pointer hover:text-red-400" />
@@ -15,10 +16,10 @@ export default function Tweet({ data }) {
     )
 }
 
-export function TweetHeader({ username, name, timestamp, text }) {
+export function TweetHeader({ username, name, timestamp, text, photoUrl }) {
     return (
         <div className="flex space-x-3 p-3 border-blue-500">
-            <img src="/assets/linkpp.png"
+            <img src={photoUrl}
                 className="w-11 h-11 rounded-full object-cover" />
             <div>
 
