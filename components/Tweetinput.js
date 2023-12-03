@@ -1,6 +1,28 @@
+import { db } from "@/firebase";
 import { CalendarIcon, ChartBarIcon, EmojiHappyIcon, LocationMarkerIcon, PhotographIcon } from "@heroicons/react/outline";
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import { useState } from "react";
+import { useSelector } from "react-redux";
 
 export default function TweetInput() {
+
+    const user = useSelector(state => state.user)
+
+    const [text, setText] = useState("")
+
+    async function sendTweet() {
+        const docRef = await addDoc(collection(db, "posts"), {
+            username: user.username,
+            name: user.name,
+            photoUrl: user.photoUrl,
+            uid: user.uid,
+            timestamp: serverTimestamp(),
+            likes: [],
+            tweet: text
+
+
+        })
+    }
     return (
         <div className=" flex space-x-3 p-3 border-b border-blue-500">
             <img
@@ -10,7 +32,9 @@ export default function TweetInput() {
                 <textarea
                     placeholder="What's in your dungeon?"
                     className="bg-transparent resize-none outline-none w-full
-                    min-h-[50px] text-lg" />
+                    min-h-[50px] text-lg"
+                    onChange={e => setText(e.target.value)}
+                />
 
 
 
@@ -34,7 +58,9 @@ export default function TweetInput() {
 
                     </div>
 
-                    <button className="font-Quest bg-blue-400 font-bold rounded-full px-4 py-1.5">
+                    <button
+                        onClick={sendTweet}
+                        className="font-Quest bg-blue-400 font-bold rounded-full px-4 py-1.5">
                         Post
                     </button>
                 </div>
