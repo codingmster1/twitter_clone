@@ -22,6 +22,7 @@ export default function TweetInput() {
 
 
         })
+        setText("")
     }
     return (
         <div className=" flex space-x-3 p-3 border-b border-blue-500">
@@ -34,6 +35,7 @@ export default function TweetInput() {
                     className="bg-transparent resize-none outline-none w-full
                     min-h-[50px] text-lg"
                     onChange={e => setText(e.target.value)}
+                    value={text}
                 />
 
 
@@ -60,6 +62,7 @@ export default function TweetInput() {
 
                     <button
                         onClick={sendTweet}
+                        disabled={!text}
                         className="font-Quest bg-blue-400 font-bold rounded-full px-4 py-1.5">
                         Post
                     </button>
