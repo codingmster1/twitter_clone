@@ -19,7 +19,7 @@ export default function CommentModal() {
 
                 <div className="bg-white w-full h-full relative sm:w-[600px] sm:h-[386px]
                 rounded-lg border border-gray-500 text-black 
-                sm:p-10 p-4">
+                sm:p-10 p-4 outline-none">
 
                     <div className="absolute w-[2px] h-[77px] bg-gray-500
                     left-[40px] top-[96px] sm:left-[64px] sm:top-[120px]"></div>
