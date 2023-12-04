@@ -24,6 +24,7 @@ export default function PostFeed() {
             <div className="p-3 flex justify-between px-3 py-2 text-lg sm:text-xl font-bold font-Quest
             border-b border-blue-500 sticky top-0 z-50">
                 Home
+                <Image src={'/assets/cucco1.gif'} width={34} height={30} />
                 <Image src={'/assets/wwlink.gif'} width={34} height={34} />
             </div>
 
