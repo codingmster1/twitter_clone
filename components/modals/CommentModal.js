@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 export default function CommentModal() {
     const isOpen = useSelector((state) => state.modals.commentModalOpen)
+    const userImg = useSelector((state) => state.user.photoUrl)
     const dispatch = useDispatch()
     const tweetDetails = useSelector(state => state.modals.commentTweetDetails)
     return (
@@ -34,7 +35,7 @@ export default function CommentModal() {
                         <div className="flex space-x-3 w-full">
                             <img
                                 className="w-12 h-12 object-cover rounded-full"
-                                src="/assets/linkpp.png" />
+                                src={tweetDetails.photoUrl} />
                             <div>
                                 <div className="font-Quest flex space-x-1.5">
                                     <h1 className="font-bold">{tweetDetails.name}</h1>
@@ -54,7 +55,7 @@ export default function CommentModal() {
                         <div className="flex space-x-3">
                             <img
                                 className="w-12 h-12 object-cover rounded-full"
-                                src="/assets/linkpp.png" />
+                                src={userImg} />
                             <div className="w-full">
                                 <textarea
                                     placeholder="Write your reply"
