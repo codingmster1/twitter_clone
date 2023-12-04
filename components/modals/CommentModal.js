@@ -8,10 +8,11 @@ export default function CommentModal() {
     return (
         <>
 
-            <Modal>
+            <Modal
                 open={isOpen}
                 onClose={() => dispatch(closeCommentModal)}
 
+            >
 
                 <div className="w-[500px] h=[500px]">
                     This is the comment modal
