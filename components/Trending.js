@@ -1,10 +1,13 @@
 import { DotsCircleHorizontalIcon, SearchIcon } from "@heroicons/react/outline";
 import { BadgeCheckIcon } from "@heroicons/react/solid";
+import Image from 'next/image';
 
 export default function Trending() {
     return (
         <div className="hidden lg:flex flex-col ml-5 mt-4 overflow-hidden font-Quest">
-            <h1 className="mb-3">Trending</h1>
+            <h1 className="mb-3 flex items-center">Trending
+                <Image src={'/assets/navi.gif'} width={34} height={34} />
+            </h1>
 
             <div className="flex space-x-3 bg-white
             w-[300px] h-[44px] p-3 rounded-3xl">
