@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 export default function CommentModal() {
     const isOpen = useSelector((state) => state.modals.commentModalOpen)
     const dispatch = useDispatch()
-    console.log(isOpen)
+    const tweetDetails = useSelector(state => state.modals.commentTweetDetails)
     return (
         <>
 
@@ -37,12 +37,12 @@ export default function CommentModal() {
                                 src="/assets/linkpp.png" />
                             <div>
                                 <div className="font-Quest flex space-x-1.5">
-                                    <h1 className="font-bold">link</h1>
-                                    <h1 className="text-gray-500">@link</h1>
+                                    <h1 className="font-bold">{tweetDetails.name}</h1>
+                                    <h1 className="text-gray-500">@{tweetDetails.username}</h1>
                                 </div>
-                                <p className="mt-1">This is great</p>
+                                <p className="mt-1">{tweetDetails.tweet}</p>
                                 <h1 className="text-gray-500 text-[15px] mt-2">
-                                    Replying to <span className="text-[#1b9bf0]">@xgs</span>
+                                    Replying to <span className="text-[#1b9bf0]">@{tweetDetails.username}</span>
                                 </h1>
 
                             </div>
