@@ -21,6 +21,8 @@ export default function CommentModal() {
                 rounded-lg border border-gray-500 text-black 
                 sm:p-10 p-4">
 
+                    <div className="absolute w-[2px] h-[77px] bg-gray-500 ml-6 mt-12"></div>
+
 
                     <div>
 
