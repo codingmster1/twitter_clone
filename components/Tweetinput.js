@@ -46,7 +46,7 @@ export default function TweetInput() {
                             onClick={() => setImage(null)}
                             className="absolute top-1 left-1
                         bg-[#8c948b] rounded-full w-8 h-8 flex justify-center
-                        items-center cursor-pointer">
+                        items-center cursor-pointer hover:bg-white hover:bg-opacity-10">
                             <XIcon className="h-5" />
                         </div>
                         <img
