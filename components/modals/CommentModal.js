@@ -1,6 +1,9 @@
+import { db } from '@/firebase';
 import { closeCommentModal } from '@/redux/modalSlice';
 import { CalendarIcon, ChartBarIcon, EmojiHappyIcon, LocationMarkerIcon, PhotographIcon, XIcon } from '@heroicons/react/outline';
 import Modal from '@mui/material/Modal';
+import { doc, updateDoc } from 'firebase/firestore';
+import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 export default function CommentModal() {
@@ -8,6 +11,22 @@ export default function CommentModal() {
     const userImg = useSelector((state) => state.user.photoUrl)
     const dispatch = useDispatch()
     const tweetDetails = useSelector(state => state.modals.commentTweetDetails)
+    const user = useSelector(state => state.user)
+
+    const [comment, setComment] = useState("")
+
+    async function sendComment() {
+        const docRef = doc(db, "posts", tweetDetails.id)
+        const commentDetails = {
+            username: user.username,
+            name: user.name,
+            photoUrl: user.photoUrl,
+            comment: comment
+        }
+        //  await updateDoc(docRef, {
+        //    comments: 
+        //})
+    }
     return (
         <>
 
@@ -60,7 +79,9 @@ export default function CommentModal() {
                                 <textarea
                                     placeholder="Write your reply"
                                     className="w-full text-lg outline-none
-                                bg-transparent resize-none" />
+                                bg-transparent resize-none"
+                                    onChange={e => setComment(e.target.value)}
+                                />
 
                                 <div className="pt-4 flex justify-between border-t border-gray-700 font-Quest">
                                     <div className="flex space-x-0 ">
@@ -84,6 +105,8 @@ export default function CommentModal() {
                                     <button
                                         className="font-Quest bg-blue-400 font-bold rounded-full px-4 py-1.5
                                      disabled:opacity-50"
+                                        disabled={!comment}
+
                                     >Post</button>
                                 </div>
 
