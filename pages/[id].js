@@ -100,10 +100,8 @@ export default function CommentsPage({ tweetData }) {
                                     <div className="flex items-center space-x-2 font-Quest text-gray-500 mb-1">
                                         <h1 className="text-black font-bold">{comment.name}</h1>
                                         <span>@{comment.username}</span>
-                                        <div className="w-1 h-1 bg-blue-500 rounded-full"></div>
-
                                     </div>
-                                    <span className="text-2xl font-Quest">{comment.text}</span>
+                                    <span className="font-Quest">{comment.comment}</span>
                                 </div>
                             </div>
                         </div>
