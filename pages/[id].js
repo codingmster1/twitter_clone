@@ -42,7 +42,7 @@ export default function CommentsPage({ tweetData }) {
 
                 <div className="sm:ml-16 xl:ml-80 max-w-2xl flex-grow
         border-blue-500 border-x">
-                    <div className="flex items-center gap-10 p-3  px-3 py-2 text-lg sm:text-xl font-bold font-Quest
+                    <div className="flex items-center  gap-6 p-3  px-3 py-2 text-lg sm:text-xl font-bold font-Quest
             border-b border-blue-500 sticky top-0 z-50">
                         <Link href={"/"}>
                             <ArrowLeftIcon className="w-7 cursor-pointer"
