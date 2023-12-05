@@ -6,6 +6,7 @@ import { db } from "@/firebase";
 import { ArrowLeftIcon } from "@heroicons/react/outline";
 import { doc, getDoc } from "firebase/firestore";
 import Image from 'next/image';
+import Link from "next/link";
 import Moment from "react-moment";
 
 export async function getServerSideProps(context) {
@@ -43,8 +44,10 @@ export default function CommentsPage({ tweetData }) {
         border-blue-500 border-x">
                     <div className="flex items-center gap-10 p-3  px-3 py-2 text-lg sm:text-xl font-bold font-Quest
             border-b border-blue-500 sticky top-0 z-50">
-                        <ArrowLeftIcon className="w-7"
-                        />
+                        <Link href={"/"}>
+                            <ArrowLeftIcon className="w-7 cursor-pointer"
+                            />
+                        </Link>
                         <h1>Tweet</h1>
                         <Image src={'/assets/mmtweeticon.gif'} width={34} height={34} />
                         <Image src={'/assets/commenticon2.gif'} width={34} height={34} />
