@@ -16,6 +16,7 @@ export default function Tweet({ data, id }) {
     const user = useSelector((state) => state.user)
 
     const [likes, setLikes] = useState([])
+    const [comments, setComments] = useState([])
 
 
     async function likeComment(e) {
@@ -40,6 +41,7 @@ export default function Tweet({ data, id }) {
 
         const unsubscribe = onSnapshot(doc(db, "posts", id), (doc) => {
             setLikes(doc.data().likes)
+            setComments(doc.data().comments)
         })
         return unsubscribe;
 
@@ -67,7 +69,10 @@ export default function Tweet({ data, id }) {
 
                     }}
                 >
-                    <ChatIcon className="w-5 cursor-pointer hover:text-red-400" />
+                    <div className="font-Quest flex justify-center items-center space-x-2">
+                        <ChatIcon className=" w-5 cursor-pointer hover:text-red-400" />
+                        {comments?.length > 0 && <span>{comments.length}</span>}
+                    </div>
                 </div>
 
                 <div

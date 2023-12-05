@@ -11,6 +11,7 @@ export default function PostFeed() {
 
     const [tweets, setTweets] = useState([])
 
+
     useEffect(() => {
         const q = query(collection(db, "posts"), orderBy("timestamp", "desc"))
         const unsubscribe = onSnapshot(q, (snapshot) => {
