@@ -1,7 +1,8 @@
-import { db } from "@/firebase";
+import { db, storage } from "@/firebase";
 import { CalendarIcon, ChartBarIcon, EmojiHappyIcon, LocationMarkerIcon, PhotographIcon } from "@heroicons/react/outline";
 import { XIcon } from "@heroicons/react/solid";
-import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import { addDoc, collection, doc, serverTimestamp, updateDoc } from "firebase/firestore";
+import { getDownloadURL, ref, uploadString } from "firebase/storage";
 import { useRef, useState } from "react";
 import { useSelector } from "react-redux";
 
@@ -25,6 +26,16 @@ export default function TweetInput() {
 
 
         })
+
+        if (image) {
+            const imageRef = ref(storage, `tweetImages/${docRef.id}`)
+            const uploadImage = await uploadString(imageRef, image, "data_url")
+            const downloadURL = await getDownloadURL(imageRef)
+            await updateDoc(doc(db, "posts", docRef.id), {
+                image: downloadURL
+            })
+        }
+
         setText("")
     }
 
