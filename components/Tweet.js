@@ -129,7 +129,10 @@ export function TweetHeader({ username, name, timestamp, text, photoUrl, image }
                 </div>
                 <span className="font-Quest">{text}</span>
 
-                {image && <img src={image} />}
+                {image &&
+                    <img
+                        className="object-cover rounded-md mt-3 max-h-80"
+                        src={image} />}
 
 
 
