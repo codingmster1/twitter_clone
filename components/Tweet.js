@@ -64,7 +64,8 @@ export default function Tweet({ data, id }) {
             className="border-b border-blue-500 cursor-pointer">
             <TweetHeader username={data?.username} name={data?.name} timestamp={data?.timestamp?.toDate()}
                 text={data?.tweet}
-                photoUrl={data?.photoUrl} />
+                photoUrl={data?.photoUrl}
+                image={data?.image} />
             <div className="p-5 ml-16 text-[#fa5044] flex space-x-14">
                 <div
                     onClick={(e) => {
@@ -111,7 +112,7 @@ export default function Tweet({ data, id }) {
     )
 }
 
-export function TweetHeader({ username, name, timestamp, text, photoUrl }) {
+export function TweetHeader({ username, name, timestamp, text, photoUrl, image }) {
     return (
         <div className="flex space-x-3 p-3 border-blue-500">
             <img src={photoUrl}
@@ -127,6 +128,10 @@ export function TweetHeader({ username, name, timestamp, text, photoUrl }) {
                     </Moment>
                 </div>
                 <span className="font-Quest">{text}</span>
+
+                {image && <img src={image} />}
+
+
 
             </div>
         </div>
