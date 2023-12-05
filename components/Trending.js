@@ -24,32 +24,32 @@ export default function Trending() {
                 <h1 className="font-Quest text-xl p-3">Whats been up</h1>
                 <div className="p-3 relative">
                     <DotsCircleHorizontalIcon className="w-5 absolute right-4" />
-                    <p className="text-xs text-gray-500 font-Quest">Trending in US</p>
-                    <h1 className="text-[15px] font-bold font-Quest">China</h1>
+                    <p className="text-xs text-gray-500 font-Quest">Trending in Hyrule</p>
+                    <h1 className="text-[15px] font-bold font-Quest">Castle Town</h1>
                     <p className="text-xs text-gray-500 font-Quest">340k Tweets</p>
                 </div>
                 <div className="p-3 relative">
                     <DotsCircleHorizontalIcon className="w-5 absolute right-4" />
-                    <p className="text-xs text-gray-500 font-Quest">Trending in US</p>
-                    <h1 className="text-[15px] font-bold font-Quest">China</h1>
+                    <p className="text-xs text-gray-500 font-Quest">Trending in Kakariko Village</p>
+                    <h1 className="text-[15px] font-bold font-Quest">Cucco Shortage</h1>
                     <p className="text-xs text-gray-500 font-Quest">340k Tweets</p>
                 </div>
                 <div className="p-3 relative">
                     <DotsCircleHorizontalIcon className="w-5 absolute right-4" />
-                    <p className="text-xs text-gray-500 font-Quest">Trending in US</p>
-                    <h1 className="text-[15px] font-bold font-Quest">China</h1>
+                    <p className="text-xs text-gray-500 font-Quest">Trending in Hateno Village</p>
+                    <h1 className="text-[15px] font-bold font-Quest">Construction</h1>
                     <p className="text-xs text-gray-500 font-Quest">340k Tweets</p>
                 </div>
                 <div className="p-3 relative">
                     <DotsCircleHorizontalIcon className="w-5 absolute right-4" />
-                    <p className="text-xs text-gray-500 font-Quest">Trending in US</p>
-                    <h1 className="text-[15px] font-bold font-Quest">China</h1>
+                    <p className="text-xs text-gray-500 font-Quest">Trending in Kokori Forest</p>
+                    <h1 className="text-[15px] font-bold font-Quest">Koroks missing</h1>
                     <p className="text-xs text-gray-500 font-Quest">340k Tweets</p>
                 </div>
                 <div className="p-3 relative">
                     <DotsCircleHorizontalIcon className="w-5 absolute right-4" />
-                    <p className="text-xs text-gray-500 font-Quest">Trending in US</p>
-                    <h1 className="text-[15px] font-bold font-Quest">China</h1>
+                    <p className="text-xs text-gray-500 font-Quest">Trending in Goron City</p>
+                    <h1 className="text-[15px] font-bold font-Quest">Weird Rocks</h1>
                     <p className="text-xs text-gray-500 font-Quest">340k Tweets</p>
                 </div>
 
@@ -84,13 +84,13 @@ export default function Trending() {
 
                 <div className="flex justify-between p-3">
                     <div className="flex space-x-3">
-                        <img className="w-11 h-11 object-cover rounded-full" src="/assets/beedle.jpg" />
+                        <img className="w-11 h-11 object-cover rounded-full" src="/assets/profilePictures/pfp1.png" />
                         <div>
                             <div className="flex space-x-1">
-                                <h1 className="font-bold">Beedle</h1>
+                                <h1 className="font-bold">Ganon</h1>
                                 <BadgeCheckIcon className="w-[18px] text-blue-400" />
                             </div>
-                            <h1 className="text-[12px] mt-1 text-gray-500">@beedle</h1>
+                            <h1 className="text-[12px] mt-1 text-gray-500">@darklord</h1>
 
                         </div>
 
@@ -104,13 +104,13 @@ export default function Trending() {
 
                 <div className="flex justify-between p-3">
                     <div className="flex space-x-3">
-                        <img className="w-11 h-11 object-cover rounded-full" src="/assets/beedle.jpg" />
+                        <img className="w-11 h-11 object-cover rounded-full" src="/assets/profilePictures/pfp7.png" />
                         <div>
                             <div className="flex space-x-1">
-                                <h1 className="font-bold">Beedle</h1>
+                                <h1 className="font-bold">Sidon</h1>
                                 <BadgeCheckIcon className="w-[18px] text-blue-400" />
                             </div>
-                            <h1 className="text-[12px] mt-1 text-gray-500">@beedle</h1>
+                            <h1 className="text-[12px] mt-1 text-gray-500">@bromance</h1>
 
                         </div>
 
