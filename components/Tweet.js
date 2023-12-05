@@ -1,5 +1,5 @@
 import { db } from "@/firebase";
-import { openCommentModal, setCommentTweet } from "@/redux/modalSlice";
+import { openCommentModal, openLoginModal, setCommentTweet } from "@/redux/modalSlice";
 import { HeartIcon as FilledHeartIcon } from "@heroicons/react/solid";
 import { ChartBarIcon, ChatIcon, HeartIcon, UploadIcon } from "@heroicons/react/outline"
 import { arrayRemove, arrayUnion, doc, onSnapshot, updateDoc } from "firebase/firestore";
@@ -21,6 +21,11 @@ export default function Tweet({ data, id }) {
 
     async function likeComment(e) {
         e.stopPropagation()
+
+        if (!user.username) {
+            dispatch(openLoginModal())
+            return;
+        }
         if (likes.includes(user.uid)) {
             await updateDoc(doc(db, "posts", id), {
                 likes: arrayRemove(user.uid),
@@ -58,6 +63,10 @@ export default function Tweet({ data, id }) {
                 <div
                     onClick={(e) => {
                         e.stopPropagation()
+                        if (!user.username) {
+                            dispatch(openLoginModal())
+                            return;
+                        }
                         dispatch(setCommentTweet({
                             id: id,
                             tweet: data?.tweet,
