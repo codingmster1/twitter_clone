@@ -2,7 +2,7 @@ import { db } from '@/firebase';
 import { closeCommentModal } from '@/redux/modalSlice';
 import { CalendarIcon, ChartBarIcon, EmojiHappyIcon, LocationMarkerIcon, PhotographIcon, XIcon } from '@heroicons/react/outline';
 import Modal from '@mui/material/Modal';
-import { doc, updateDoc } from 'firebase/firestore';
+import { arrayUnion, doc, updateDoc } from 'firebase/firestore';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -23,9 +23,9 @@ export default function CommentModal() {
             photoUrl: user.photoUrl,
             comment: comment
         }
-        //  await updateDoc(docRef, {
-        //    comments: 
-        //})
+        await updateDoc(docRef, {
+            comments: arrayUnion(commentDetails)
+        })
     }
     return (
         <>
@@ -106,6 +106,7 @@ export default function CommentModal() {
                                         className="font-Quest bg-blue-400 font-bold rounded-full px-4 py-1.5
                                      disabled:opacity-50"
                                         disabled={!comment}
+                                        onClick={sendComment}
 
                                     >Post</button>
                                 </div>
