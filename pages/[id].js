@@ -68,7 +68,7 @@ export default function CommentsPage({ tweetData }) {
                                         {JSON.parse(tweetData.timestamp)}
                                     </Moment>
                                 </div>
-                                <span className="font-Quest">{tweetData.text}</span>
+                                <span className="text-2xl font-Quest">{tweetData.text}</span>
 
                             </div>
                         </div>
@@ -78,7 +78,7 @@ export default function CommentsPage({ tweetData }) {
                     </div>
 
 
-                    <Tweet />
+
                 </div>
 
                 <Trending />
