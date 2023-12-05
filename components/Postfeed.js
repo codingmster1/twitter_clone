@@ -21,9 +21,9 @@ export default function PostFeed() {
     }, [])
     return (
         <div className="sm:ml-16 xl:ml-80 max-w-2xl flex-grow
-        border-blue-500 border-x">
+        border-blue-500 border-x bg-white" >
             <div className="p-3 flex justify-between px-3 py-2 text-lg sm:text-xl font-bold font-Quest
-            border-b border-blue-500 sticky top-0 z-50">
+            border-b border-blue-500 sticky top-0 z-50 bg-white">
                 Home
                 <Image src={'/assets/cucco1.gif'} width={34} height={30} />
                 <Image src={'/assets/wwlink.gif'} width={34} height={34} />
