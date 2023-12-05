@@ -10,7 +10,7 @@ export default function TweetInput() {
     const user = useSelector(state => state.user)
 
     const [text, setText] = useState("")
-    const [image, setImage] = useState("/assets/linkpp.png")
+    const [image, setImage] = useState(null)
     const filePickerRef = useRef(null)
 
     async function sendTweet() {
@@ -27,6 +27,20 @@ export default function TweetInput() {
         })
         setText("")
     }
+
+
+    function addImagetoTweet(e) {
+        const reader = new FileReader()
+        if (e.target.files[0]) {
+            reader.readAsDataURL(e.target.files[0])
+        }
+
+        reader.addEventListener("load", e => {
+            setImage(e.target.result)
+        })
+
+    }
+
     return (
         <div className=" flex space-x-3 p-3 border-b border-blue-500">
             <img
@@ -66,6 +80,7 @@ export default function TweetInput() {
                             <PhotographIcon className="h-[22px] text-[#fa5044]" />
                         </div>
                         <input
+                            onChange={addImagetoTweet}
                             ref={filePickerRef}
                             className="hidden" type="file" />
                         <div className="iconAnimation">
