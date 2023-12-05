@@ -100,7 +100,7 @@ export default function TweetInput() {
 
                     <button
                         onClick={sendTweet}
-                        disabled={!text}
+                        disabled={!text && !image}
                         className="font-Quest bg-blue-400 font-bold rounded-full px-4 py-1.5
                         disabled:opacity-50">
                         Post
