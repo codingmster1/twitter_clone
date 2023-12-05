@@ -2,7 +2,7 @@ import { db } from "@/firebase";
 import { openCommentModal, openLoginModal, setCommentTweet } from "@/redux/modalSlice";
 import { HeartIcon as FilledHeartIcon, TrashIcon } from "@heroicons/react/solid";
 import { ChartBarIcon, ChatIcon, HeartIcon, UploadIcon } from "@heroicons/react/outline"
-import { arrayRemove, arrayUnion, doc, onSnapshot, updateDoc } from "firebase/firestore";
+import { arrayRemove, arrayUnion, deleteDoc, doc, onSnapshot, updateDoc } from "firebase/firestore";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import Moment from "react-moment";
@@ -17,6 +17,12 @@ export default function Tweet({ data, id }) {
 
     const [likes, setLikes] = useState([])
     const [comments, setComments] = useState([])
+
+    async function deleteTweet(e) {
+        e.stopPropagation()
+        await deleteDoc(doc(db, "posts", id))
+
+    }
 
 
     async function likeComment(e) {
@@ -45,8 +51,8 @@ export default function Tweet({ data, id }) {
         if (!id) return;
 
         const unsubscribe = onSnapshot(doc(db, "posts", id), (doc) => {
-            setLikes(doc.data().likes)
-            setComments(doc.data().comments)
+            setLikes(doc.data()?.likes)
+            setComments(doc.data()?.comments)
         })
         return unsubscribe;
 
