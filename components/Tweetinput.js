@@ -2,7 +2,7 @@ import { db } from "@/firebase";
 import { CalendarIcon, ChartBarIcon, EmojiHappyIcon, LocationMarkerIcon, PhotographIcon } from "@heroicons/react/outline";
 import { XIcon } from "@heroicons/react/solid";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useSelector } from "react-redux";
 
 export default function TweetInput() {
@@ -11,6 +11,7 @@ export default function TweetInput() {
 
     const [text, setText] = useState("")
     const [image, setImage] = useState("/assets/linkpp.png")
+    const filePickerRef = useRef(null)
 
     async function sendTweet() {
         const docRef = await addDoc(collection(db, "posts"), {
@@ -59,9 +60,14 @@ export default function TweetInput() {
 
                 <div className="flex justify-between border-t border-blue-500 pt-4">
                     <div className="flex space-x-0 ">
-                        <div className="iconAnimation">
+                        <div
+                            onClick={() => filePickerRef.current.click()}
+                            className="iconAnimation">
                             <PhotographIcon className="h-[22px] text-[#fa5044]" />
                         </div>
+                        <input
+                            ref={filePickerRef}
+                            className="hidden" type="file" />
                         <div className="iconAnimation">
                             <ChartBarIcon className="h-[22px] text-[#fa5044]" />
                         </div>
