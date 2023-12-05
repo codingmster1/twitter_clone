@@ -71,10 +71,12 @@ export default function Tweet({ data, id }) {
                 </div>
 
                 <div
+                    className="font-Quest flex justify-center items-center space-x-2 text-pink-500"
                     onClick={likeComment}>
 
                     {likes.includes(user.uid) ? <FilledHeartIcon className="w-5 text-pink-500" /> :
                         <HeartIcon className="w-5 cursor-pointer hover:text-red-400" />}
+                    {likes.length > 0 && <span>{likes.length}</span>}
                 </div>
                 <ChartBarIcon className="w-5 cursor-not-allowed" />
                 <UploadIcon className="w-5 cursor-not-allowed" />
