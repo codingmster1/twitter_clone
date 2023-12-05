@@ -1,5 +1,6 @@
 import { db } from "@/firebase";
 import { CalendarIcon, ChartBarIcon, EmojiHappyIcon, LocationMarkerIcon, PhotographIcon } from "@heroicons/react/outline";
+import { XIcon } from "@heroicons/react/solid";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { useState } from "react";
 import { useSelector } from "react-redux";
@@ -9,6 +10,7 @@ export default function TweetInput() {
     const user = useSelector(state => state.user)
 
     const [text, setText] = useState("")
+    const [image, setImage] = useState("/assets/linkpp.png")
 
     async function sendTweet() {
         const docRef = await addDoc(collection(db, "posts"), {
@@ -37,6 +39,21 @@ export default function TweetInput() {
                     onChange={e => setText(e.target.value)}
                     value={text}
                 />
+
+                {image && (
+                    <div className="relative mb-4">
+                        <div
+                            onClick={() => setImage(null)}
+                            className="absolute top-1 left-1
+                        bg-[#8c948b] rounded-full w-8 h-8 flex justify-center
+                        items-center cursor-pointer">
+                            <XIcon className="h-5" />
+                        </div>
+                        <img
+                            className="rounded-2xl max-h-80 object-contain"
+                            src={image} />
+                    </div>
+                )}
 
 
 
