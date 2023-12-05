@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import Tweet from "./Tweet";
 import TweetInput from "./Tweetinput";
 import Image from 'next/image';
+import Link from "next/link";
 
 export default function PostFeed() {
 
@@ -30,8 +31,13 @@ export default function PostFeed() {
 
             <TweetInput />
 
-            {tweets.map(tweet => {
-                return <Tweet key={tweet.id} id={tweet.id} data={tweet.data()} />
+            {tweets.map((tweet) => {
+                return (
+                    <Link href={tweet.id} key={tweet.id}>
+
+                        <Tweet id={tweet.id} data={tweet.data()} />
+                    </Link>
+                )
             })}
 
             <Tweet />
