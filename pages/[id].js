@@ -8,6 +8,7 @@ import { doc, getDoc } from "firebase/firestore";
 import Image from 'next/image';
 import Link from "next/link";
 import Moment from "react-moment";
+import { useSelector } from "react-redux";
 
 export async function getServerSideProps(context) {
     const id = context.query.id
@@ -34,6 +35,7 @@ export async function getServerSideProps(context) {
 
 
 export default function CommentsPage({ tweetData }) {
+    const user = useSelector(state => state.user)
     return (
         <div>
             <div className="bg-[#d4fdf6] min-h-screen text-[#000000]
@@ -69,15 +71,43 @@ export default function CommentsPage({ tweetData }) {
                                     </Moment>
                                 </div>
                                 <span className="text-2xl font-Quest">{tweetData.text}</span>
-
                             </div>
                         </div>
+                    </div>
 
+                    <div className="flex justify-between items-center font-Quest p-2 border-b border-white">
+                        <div className="flex justify-center items-center p-1 space-x-2">
+                            <img className="w-12 h-12 rounded-full object-cover" src={user.photoUrl} />
+                            <h1 className="text-1xl text-gray-500">Write your reply</h1>
+                        </div>
 
-
+                        <button
+                            disabled={true}
+                            className="font-Quest bg-blue-400 font-bold rounded-full px-4 py-1.5
+                        disabled:opacity-50">
+                            Post
+                        </button>
                     </div>
 
 
+                    {tweetData.comments?.map(comment => (
+                        <div className="border-b border-blue-500">
+                            <div className="flex space-x-3 p-3 border-blue-500">
+                                <img src={comment.photoUrl}
+                                    className="w-11 h-11 rounded-full object-cover" />
+                                <div>
+
+                                    <div className="flex items-center space-x-2 font-Quest text-gray-500 mb-1">
+                                        <h1 className="text-black font-bold">{comment.name}</h1>
+                                        <span>@{comment.username}</span>
+                                        <div className="w-1 h-1 bg-blue-500 rounded-full"></div>
+
+                                    </div>
+                                    <span className="text-2xl font-Quest">{comment.text}</span>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
 
                 </div>
 

@@ -1,20 +1,25 @@
 import { openCommentModal, setCommentTweet } from "@/redux/modalSlice";
 import { ChartBarIcon, ChatIcon, HeartIcon, UploadIcon } from "@heroicons/react/outline"
+import { useRouter } from "next/router";
 import Moment from "react-moment";
 import { useDispatch } from "react-redux";
 export default function Tweet({ data, id }) {
 
 
     const dispatch = useDispatch()
+    const router = useRouter()
 
     return (
-        <div className="border-b border-blue-500">
+        <div
+            onClick={() => router.push("/" + id)}
+            className="border-b border-blue-500 cursor-pointer">
             <TweetHeader username={data?.username} name={data?.name} timestamp={data?.timestamp?.toDate()}
                 text={data?.tweet}
                 photoUrl={data?.photoUrl} />
             <div className="p-5 ml-16 text-[#fa5044] flex space-x-14">
                 <div
-                    onClick={() => {
+                    onClick={(e) => {
+                        e.stopPropagation()
                         dispatch(setCommentTweet({
                             id: id,
                             tweet: data?.tweet,
