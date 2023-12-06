@@ -12,9 +12,11 @@ export default function TweetInput() {
 
     const [text, setText] = useState("")
     const [image, setImage] = useState(null)
+    const [loading, setLoading] = useState(false)
     const filePickerRef = useRef(null)
 
     async function sendTweet() {
+        setLoading(true)
         const docRef = await addDoc(collection(db, "posts"), {
             username: user.username,
             name: user.name,
@@ -37,6 +39,8 @@ export default function TweetInput() {
         }
 
         setText("")
+        setImage(null)
+        setLoading(false)
     }
 
 
@@ -57,7 +61,13 @@ export default function TweetInput() {
             <img
                 className="w-11 h-11 rounded-full object-cover"
                 src={user.photoUrl || "/assets/cucco2.png"} />
-            <div className="w-full">
+
+            {loading && <h1 className="text-1xl text-black font-Quest">Uploading image</h1>}
+
+
+
+
+            {!loading && (<div className="w-full">
                 <textarea
                     placeholder="What's in your dungeon?"
                     className="bg-transparent resize-none outline-none w-full
@@ -117,7 +127,7 @@ export default function TweetInput() {
                         Post
                     </button>
                 </div>
-            </div>
+            </div>)}
         </div>
     )
 }
