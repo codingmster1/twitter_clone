@@ -1,10 +1,11 @@
 import { db, storage } from "@/firebase";
+import { openLoginModal } from "@/redux/modalSlice";
 import { CalendarIcon, ChartBarIcon, EmojiHappyIcon, LocationMarkerIcon, PhotographIcon } from "@heroicons/react/outline";
 import { XIcon } from "@heroicons/react/solid";
 import { addDoc, collection, doc, serverTimestamp, updateDoc } from "firebase/firestore";
 import { getDownloadURL, ref, uploadString } from "firebase/storage";
 import { useRef, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 export default function TweetInput() {
 
@@ -15,7 +16,15 @@ export default function TweetInput() {
     const [loading, setLoading] = useState(false)
     const filePickerRef = useRef(null)
 
+    const dispatch = useDispatch()
+
     async function sendTweet() {
+
+        if (!user.username) {
+            dispatch(openLoginModal())
+            return;
+
+        }
         setLoading(true)
         const docRef = await addDoc(collection(db, "posts"), {
             username: user.username,
